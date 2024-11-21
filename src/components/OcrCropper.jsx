@@ -194,6 +194,7 @@ function OcrCropper() {
       );
 
       setOcrText(response.data.text.join("\n\n"));
+      console.log("OCR result:", response.data.text);
     } catch (error) {
       console.error("OCR failed", error);
       setOcrText("Error performing OCR");
@@ -229,7 +230,7 @@ function OcrCropper() {
       {ocrText && (
         <div>
           <h3>OCR Result:</h3>
-          <pre>{ocrText}</pre>
+          <pre style={{ fontSize: "2em" }}>{ocrText}</pre>
         </div>
       )}
     </div>
